@@ -1,18 +1,19 @@
-import './singleCard.css';
-
-const SingleCard = ({ card, handleChoice }) => {
+const SingleCard = ({ card, handleChoice, turned, disabled }) => {
 	const handleClick = () => {
-		handleChoice(card);
+		if (!disabled) {
+			handleChoice(card);
+		}
 	};
+
 	return (
 		<div className="card">
-			<div>
+			<div className={turned ? 'turned' : ''}>
 				<img className="front" src={card.src} alt="card front" />
 				<img
 					className="back"
 					src="/img/cover.png"
-					alt="card back"
 					onClick={handleClick}
+					alt="cover"
 				/>
 			</div>
 		</div>

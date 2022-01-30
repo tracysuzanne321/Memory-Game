@@ -1,27 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&display=swap');
+
 .App {
 	max-width: 860px;
 	margin: 40px auto;
 }
 
+body {
+	text-align: center;
+	background: black;
+	color: #fff;
+	font-family: 'Poppins', sans-serif;
+	margin: 0;
+	font-size: 1.5em;
+}
 button {
 	background: none;
-	border: 2px solid white;
+	border: 2px solid #fff;
+	padding: 6px 12px;
 	border-radius: 4px;
+	color: #fff;
+	background: black;
+	font-weight: bold;
 	cursor: pointer;
 	font-size: 1em;
-	font-weight: bold;
-	color: white;
-	padding: 6px 12px;
 }
-
 button:hover {
-	background: crimson;
-	color: white;
+	background: #6e1349;
+	color: #fff;
 }
-
-.card-grid {
-	display: grid;
+.card-content {
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-gap: 20px;
-	margin-top: 20px;
+	margin-top: 40px;
+	display: grid;
+}
+
+.card {
+	position: relative;
+}
+
+.card img {
+	width: 100%;
+	display: block;
+	border: 2px solid white;
+	border-radius: 6px;
+}
+
+.card .front {
+	transform: rotateY(90deg);
+	transition: all ease-in 0.2s;
+	position: absolute;
+}
+.turned .front {
+	transform: rotateY(0deg);
+	transition-delay: 0.2s;
+}
+
+.card .back {
+	transition: all ease-in 0.2s;
+	transition-delay: 0.2s;
+}
+.turned .back {
+	transform: rotateY(90deg);
+	transition-delay: 0s;
 }
